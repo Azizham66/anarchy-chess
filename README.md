@@ -1,6 +1,6 @@
 # Anarch Chess
 
-Client-side recreation of Anarch Chess. The board rules, AI search, evaluation,
+Client-side implementation of Anarch Chess. The board rules, AI search, evaluation,
 post-game analysis, and AI worker run in the browser. Match archive requests
 use `/api` when a backend is available and fall back to `localStorage` when it
 is not.
@@ -64,10 +64,3 @@ navigation to `/rules` and `/about` works. For production persistence, attach a
 Render persistent disk at `/opt/render/project/src/anarch-chess/data`; otherwise
 the database is reset when the service is redeployed.
 
-## Backend note
-
-The original browser client calls `/api/matches` and `/api/stats`. The original
-private backend is not present in the public browser bundle, so the included
-server is a compatible TypeScript reconstruction based on that observed API
-contract. A static Netlify deployment remains fully playable because failed
-archive requests are stored locally in the browser.
