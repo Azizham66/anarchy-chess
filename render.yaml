@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: anarch-chess
+    runtime: node
+    buildCommand: npm ci && npm run build
+    startCommand: npm run server
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: DATA_DIR
+        value: ./data
